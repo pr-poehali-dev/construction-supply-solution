@@ -7,7 +7,7 @@ const steps = [
     title: "Заявка",
     who: "Вы",
     description:
-      "Присылаете смету, спецификацию или просто список того, что нужно. Любой формат — от Excel до голосового.",
+      "Присылаете смету, список или голосовое — любой формат подходит.",
   },
   {
     number: "02",
@@ -15,7 +15,7 @@ const steps = [
     title: "Анализ и КП",
     who: "Мы",
     description:
-      "Мониторим рынок, собираем предложения от 3–5 проверенных поставщиков: прямые заводы, дистрибьюторы.",
+      "Мониторим рынок, собираем 3–5 предложений от проверенных поставщиков.",
   },
   {
     number: "03",
@@ -23,68 +23,69 @@ const steps = [
     title: "Согласование",
     who: "Вы",
     description:
-      "Выбираете лучшее предложение по цене и срокам. Мы покажем все варианты — решение за вами.",
+      "Выбираете лучшее по цене и срокам. Все варианты перед вами — решение за вами.",
   },
   {
     number: "04",
     icon: "Truck" as const,
-    title: "Доставка и отчёт",
+    title: "Доставка",
     who: "Мы",
     description:
-      "Организуем логистику своим транспортом, контролируем приёмку, предоставляем полный пакет документов.",
+      "Привозим своим транспортом, контролируем приёмку, отдаём документы.",
   },
 ];
 
 const HowWeWorkSection = () => {
   return (
-    <section id="how" className="py-20 md:py-28 bg-secondary text-white">
+    <section id="how" className="py-24 bg-secondary overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
-            Схема работы
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold">
-            4 шага до материала на объекте
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-8 bg-primary" />
+            <span className="text-primary text-sm font-bold uppercase tracking-[0.2em]">
+              Как работаем
+            </span>
+            <div className="h-px w-8 bg-primary" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+            От заявки до материала — 4 шага
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full hover:bg-white/10 transition-colors">
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-5xl font-black text-white/10">
+        <div className="relative">
+          <div className="hidden lg:block absolute top-[52px] left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-px bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center lg:text-left">
+                <div className="relative inline-flex items-center justify-center w-14 h-14 bg-primary rounded-2xl mb-6 mx-auto lg:mx-0">
+                  <Icon name={step.icon} size={24} className="text-white" />
+                  <span className="absolute -top-2 -right-2 w-6 h-6 bg-white text-secondary text-[10px] font-black rounded-full flex items-center justify-center">
                     {step.number}
                   </span>
-                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <Icon name={step.icon} size={20} className="text-primary" />
-                  </div>
                 </div>
-                <div className="inline-block bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded mb-3 uppercase tracking-wide">
+
+                <div className="inline-block bg-primary/15 text-primary text-[11px] font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-widest">
                   {step.who}
                 </div>
-                <h3 className="text-lg font-bold mb-3">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+
+                <h3 className="text-white text-lg font-bold mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto lg:mx-0">
                   {step.description}
                 </p>
               </div>
-
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                  <Icon
-                    name="ChevronRight"
-                    size={24}
-                    className="text-primary/50"
-                  />
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <p className="text-center text-gray-400 mt-10 text-sm">
-          На каждом этапе вы видите, что происходит. Мы на связи 24/7.
-        </p>
+        <div className="mt-14 text-center">
+          <p className="inline-flex items-center gap-2 text-gray-500 text-sm bg-white/5 rounded-full px-5 py-2.5">
+            <Icon name="Clock" size={16} className="text-primary" />
+            На каждом этапе вы видите, что происходит. Мы на связи 24/7.
+          </p>
+        </div>
       </div>
     </section>
   );
