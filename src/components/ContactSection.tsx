@@ -23,65 +23,55 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-secondary relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-
-      <div className="container mx-auto px-4 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-          <div className="lg:col-span-2 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-primary" />
-              <span className="text-primary text-sm font-bold uppercase tracking-[0.2em]">
-                Контакты
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-6">
-              Рассчитаем экономию
-              <br /> за 1 день
+    <section id="contact" className="py-20 md:py-28 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+              Контакты
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
+              Рассчитаем экономию для вашего объекта
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-10 text-sm">
-              Пришлите смету или список материалов — мы подготовим КП с расчётом
-              экономии для вашего объекта.
+            <p className="text-muted-foreground mb-10 leading-relaxed">
+              Пришлите смету или список материалов — мы подготовим коммерческое
+              предложение с расчётом экономии за 1 рабочий день.
             </p>
 
-            <div className="space-y-5">
-              <a
-                href="tel:+78000000000"
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <Icon name="Phone" size={20} className="text-primary" />
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                  <Icon name="Phone" size={22} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-gray-500 text-xs uppercase tracking-wider">Телефон</p>
-                  <p className="font-bold text-white text-lg">
+                  <p className="text-sm text-muted-foreground">Телефон</p>
+                  <p className="font-bold text-secondary text-lg">
                     +7 (800) 000-00-00
                   </p>
                 </div>
-              </a>
+              </div>
 
-              <a
-                href="mailto:info@stroysnab.ru"
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <Icon name="Mail" size={20} className="text-primary" />
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                  <Icon name="Mail" size={22} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-gray-500 text-xs uppercase tracking-wider">Email</p>
-                  <p className="font-bold text-white text-lg">
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <p className="font-bold text-secondary text-lg">
                     info@stroysnab.ru
                   </p>
                 </div>
-              </a>
+              </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center shrink-0">
-                  <Icon name="Clock" size={20} className="text-primary" />
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                  <Icon name="Clock" size={22} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-gray-500 text-xs uppercase tracking-wider">Работаем</p>
-                  <p className="font-bold text-white text-lg">
+                  <p className="text-sm text-muted-foreground">
+                    Время работы
+                  </p>
+                  <p className="font-bold text-secondary text-lg">
                     Пн–Пт: 8:00–20:00
                   </p>
                 </div>
@@ -89,21 +79,18 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-3">
+          <div>
             <form
               onSubmit={handleSubmit}
-              className="bg-white rounded-2xl p-8 md:p-10"
+              className="bg-background rounded-2xl p-8 border border-border"
             >
-              <h3 className="text-xl font-extrabold text-secondary mb-1">
+              <h3 className="text-xl font-bold text-secondary mb-6">
                 Оставьте заявку
               </h3>
-              <p className="text-muted-foreground text-sm mb-7">
-                Ответим в течение 30 минут в рабочее время
-              </p>
 
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <div>
-                  <label className="text-sm font-semibold text-secondary mb-2 block">
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">
                     Ваше имя
                   </label>
                   <Input
@@ -112,13 +99,13 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="h-12 rounded-xl border-border bg-background"
+                    className="h-12"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-semibold text-secondary mb-2 block">
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">
                     Телефон
                   </label>
                   <Input
@@ -128,13 +115,13 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
                     }
-                    className="h-12 rounded-xl border-border bg-background"
+                    className="h-12"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-semibold text-secondary mb-2 block">
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">
                     Что нужно закупить?
                   </label>
                   <Textarea
@@ -144,21 +131,21 @@ const ContactSection = () => {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     rows={4}
-                    className="rounded-xl border-border bg-background"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold text-base h-14 rounded-xl"
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold text-base h-14 rounded-lg"
                 >
                   <Icon name="Send" size={18} className="mr-2" />
                   Отправить заявку
                 </Button>
 
-                <p className="text-[11px] text-muted-foreground text-center">
-                  Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                <p className="text-xs text-muted-foreground text-center">
+                  Нажимая кнопку, вы соглашаетесь с обработкой персональных
+                  данных
                 </p>
               </div>
             </form>

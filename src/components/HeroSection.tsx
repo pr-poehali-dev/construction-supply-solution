@@ -3,98 +3,77 @@ import Icon from "@/components/ui/icon";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen pt-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-64px)]">
-        <div className="flex items-center px-6 md:px-12 lg:px-16 py-16 lg:py-0 bg-secondary">
-          <div className="max-w-lg mx-auto lg:mx-0">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-8 bg-primary" />
-              <span className="text-primary text-sm font-bold uppercase tracking-[0.2em]">
-                Снабжение под ключ
-              </span>
-            </div>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://cdn.poehali.dev/projects/32ba17cd-163c-48f4-8dc0-be1e3ea4ff81/files/4b875ce1-b0e4-4085-9a7e-1a5e88db2937.jpg)",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
 
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-              Ваш удалённый
-              <br />
-              <span className="text-primary">отдел снабжения</span>
-            </h1>
-
-            <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-md">
-              Мы закупаем стройматериалы дешевле, привозим вовремя и берём на
-              себя всю рутину. Вы строите — мы снабжаем.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 mb-12">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white font-bold text-base px-8 h-14 rounded-xl"
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <Icon name="Calculator" size={20} className="mr-2" />
-                Рассчитать экономию
-              </Button>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="text-gray-300 hover:text-white hover:bg-white/5 font-semibold text-base px-8 h-14 rounded-xl"
-                onClick={() =>
-                  document
-                    .getElementById("cases")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Кейсы
-                <Icon name="ArrowRight" size={18} className="ml-2" />
-              </Button>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6">
-              <div>
-                <p className="text-3xl md:text-4xl font-black text-white">15%</p>
-                <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">
-                  средняя экономия
-                </p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-black text-white">50+</p>
-                <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">
-                  объектов
-                </p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-black text-white">24/7</p>
-                <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">
-                  на связи
-                </p>
-              </div>
-            </div>
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6">
+            <Icon name="Truck" size={16} className="text-primary" />
+            <span className="text-primary text-sm font-semibold tracking-wide uppercase">
+              Собственная логистика
+            </span>
           </div>
-        </div>
 
-        <div className="relative hidden lg:block">
-          <img
-            src="https://cdn.poehali.dev/projects/32ba17cd-163c-48f4-8dc0-be1e3ea4ff81/files/07d586b2-63bf-4799-a076-b9b9f485de8c.jpg"
-            alt="Строительная площадка"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-secondary/30" />
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+            Удалённый отдел снабжения для вашей стройки
+          </h1>
 
-          <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shrink-0">
-                <Icon name="Truck" size={24} className="text-white" />
-              </div>
-              <div>
-                <p className="text-white font-bold text-sm">Собственная логистика</p>
-                <p className="text-white/70 text-xs">
-                  Свой автопарк и проверенные перевозчики — контроль каждой доставки
-                </p>
-              </div>
+          <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
+            Перестаньте отвлекаться на поиск песка и гвоздей. Сосредоточьтесь
+            на строительстве, а мы привезём материалы точно в срок и дешевле,
+            чем вы купите сами.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white font-bold text-base px-8 py-6 rounded-lg"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <Icon name="Calculator" size={20} className="mr-2" />
+              Рассчитать экономию
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/30 text-white hover:bg-white/10 font-semibold text-base px-8 py-6 rounded-lg"
+              onClick={() =>
+                document
+                  .getElementById("cases")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Смотреть кейсы
+              <Icon name="ArrowDown" size={18} className="ml-2" />
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-8 mt-12 pt-8 border-t border-white/15">
+            <div>
+              <p className="text-3xl font-bold text-primary">15%</p>
+              <p className="text-sm text-gray-400">средняя экономия</p>
+            </div>
+            <div className="w-px h-10 bg-white/20" />
+            <div>
+              <p className="text-3xl font-bold text-white">24/7</p>
+              <p className="text-sm text-gray-400">на связи</p>
+            </div>
+            <div className="w-px h-10 bg-white/20" />
+            <div>
+              <p className="text-3xl font-bold text-white">50+</p>
+              <p className="text-sm text-gray-400">объектов</p>
             </div>
           </div>
         </div>
